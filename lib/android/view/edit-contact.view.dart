@@ -16,6 +16,46 @@ class EditContactView extends StatelessWidget {
         title: model == null ? Text("New Contact") : Text("Edit Contact"),
         centerTitle: true,
       ),
+      body: SingleChildScrollView(
+        padding: EdgeInsets.all(20),
+        child: Form(
+          child: Column(
+            children: [
+              TextFormField(
+                initialValue: model?.name,
+                onSaved: (val) {
+                  model.name = val;
+                },
+              ),
+              TextFormField(
+                initialValue: model?.phone,
+                onSaved: (val) {
+                  model.phone = val;
+                },
+              ),
+              TextFormField(
+                initialValue: model?.email,
+                onSaved: (val) {
+                  model.email = val;
+                },
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              FlatButton(
+                  onPressed: (){},
+                  color: Theme.of(context).primaryColor,
+                  child: Text(
+                    "Save",
+                    style: TextStyle(
+                      color: Theme.of(context).accentColor,
+                    )
+                  )
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
