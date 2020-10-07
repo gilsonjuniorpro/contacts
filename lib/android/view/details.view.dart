@@ -1,5 +1,6 @@
-import 'package:flutter/cupertino.dart';
+import 'package:contacts/models/contact.model.dart';
 import 'package:flutter/material.dart';
+import 'edit-contact.view.dart';
 
 class DetailsView extends StatelessWidget {
   @override
@@ -148,7 +149,21 @@ class DetailsView extends StatelessWidget {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: (){},
+        onPressed: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => EditContactView(
+                model: ContactModel(
+                  id: "1",
+                  name: "Gilson Junior",
+                  email: "gilsonjuniorpro@gmail.com",
+                  phone: "+1 999 999-9999",
+                ),
+              ),
+            ),
+          );
+        },
         backgroundColor: Theme.of(context).primaryColor,
         child: Icon(
           Icons.edit,
