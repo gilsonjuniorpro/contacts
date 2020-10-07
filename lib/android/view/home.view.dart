@@ -1,3 +1,4 @@
+import 'package:contacts/android/view/details.view.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -42,14 +43,22 @@ class HomeView extends StatelessWidget {
                 borderRadius: BorderRadius.circular(48),
                 image: DecorationImage(
                   image: NetworkImage(
-                      "https://baltaio.blob.core.windows.net/website/images%2Finstructor.jpg"
+                      "https://media-exp1.licdn.com/dms/image/C5603AQFC9OVbWQCqNQ/profile-displayphoto-shrink_400_400/0?e=1607558400&v=beta&t=kN3zf1PCf1WhBNkCW3tLCDbGnBc96frKj_9A9eQrJ3c"
                   ),
                 ),
               ),
             ),
-            title: Text("Andre Baltieri"),
-            subtitle: Text("+55 99 99999-9999"),
+            title: Text("Gilson Junior"),
+            subtitle: Text("+1 999 999-9999"),
             trailing: FlatButton(
+              onPressed: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => DetailsView(),
+                  ),
+                );
+              },
               child: Icon(
                 Icons.chat,
                 color: Theme.of(context).primaryColor,
@@ -57,6 +66,14 @@ class HomeView extends StatelessWidget {
             ),
           )
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){},
+        child: Icon(
+          Icons.add,
+          color: Theme.of(context).accentColor,
+        ),
+        backgroundColor: Theme.of(context).primaryColor,
       ),
     );
   }
