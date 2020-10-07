@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'home.view.dart';
 
 class SplashView extends StatelessWidget {
   @override
@@ -23,6 +24,20 @@ class SplashView extends StatelessWidget {
               fontSize: 24,
               color: Theme.of(context).accentColor,
             )
+          ),
+          FlatButton(
+              onPressed: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => HomeView(),
+                  ),
+                );
+              },
+            child: Icon(
+              Icons.arrow_forward,
+              color: Theme.of(context).accentColor,
+            ),
           ),
         ],
       )
